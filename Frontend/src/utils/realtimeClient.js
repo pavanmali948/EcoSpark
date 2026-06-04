@@ -5,9 +5,9 @@ const apiBase = () => {
   const raw =
     import.meta.env.VITE_API_BASE_URL ||
     import.meta.env.VITE_API_URL ||
-    "http://localhost:8080";
+    "https://ecospark-production.up.railway.app";
   if (raw === "/api" || (raw.startsWith("/") && !raw.startsWith("//"))) {
-    return "http://localhost:8080";
+    return "https://ecospark-production.up.railway.app";
   }
   return raw.replace(/\/$/, "");
 };
