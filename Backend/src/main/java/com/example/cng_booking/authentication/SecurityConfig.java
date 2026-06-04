@@ -51,17 +51,17 @@ public class SecurityConfig {
         http.csrf(csrf -> csrf.disable());
 
         http.cors(cors -> cors.configurationSource(request -> {
-    var corsConfig = new org.springframework.web.cors.CorsConfiguration();
-    corsConfig.setAllowCredentials(true);
-    // Local frontend (Vite)
-    corsConfig.addAllowedOrigin("http://localhost:5173");
-    corsConfig.addAllowedOrigin("http://127.0.0.1:5173");
-    corsConfig.addAllowedOrigin("http://localhost:4173");
-    corsConfig.addAllowedOrigin("http://127.0.0.1:4173");
-    corsConfig.addAllowedHeader("*");
-    corsConfig.addAllowedMethod("*");
-    return corsConfig;
-}));
+            var corsConfig = new org.springframework.web.cors.CorsConfiguration();
+            corsConfig.setAllowCredentials(true);
+            corsConfig.addAllowedOrigin("https://airy-passion-production-5366.up.railway.app");
+            corsConfig.addAllowedOrigin("http://localhost:5173");
+            corsConfig.addAllowedOrigin("http://127.0.0.1:5173");
+            corsConfig.addAllowedOrigin("http://localhost:4173");
+            corsConfig.addAllowedOrigin("http://127.0.0.1:4173");
+            corsConfig.addAllowedHeader("*");
+            corsConfig.addAllowedMethod("*");
+            return corsConfig;
+        }));
 
         http.sessionManagement(sess ->
                 sess.sessionCreationPolicy(SessionCreationPolicy.STATELESS)
